@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var buttonTracker = "Press something!"
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Text(buttonTracker)
+            Button("Button 1") {
+                self.buttonTracker = "You pressed Button 1!"
+            }
+            
+            Button(action: {
+                self.buttonTracker = "You pressed heart !"
+            }) {
+                Image(systemName: "heart.circle.fill")
+            }
+            
+            Button("Button 3") {
+                self.buttonTracker = "You pressed Button 3!"
+            }
+        }
     }
 }
 
