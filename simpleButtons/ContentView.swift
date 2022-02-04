@@ -14,8 +14,10 @@ struct ContentView: View {
     var body: some View {
         VStack{
             Text(buttonTracker)
-            Button("Button 1") {
-                self.buttonTracker = "You pressed Button 1!"
+            Button(action:{
+                self.buttonTracker = "You pressed button 1!"
+            }) {
+                Text("Button 1")
             }
             
             Button(action: {
